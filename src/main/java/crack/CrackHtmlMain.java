@@ -11,7 +11,6 @@ public class CrackHtmlMain {
         CrackJar crackJar = new CrackJar("aspose-html-20.6.jar");
         String crackFilePath = crackJar.crack(pool -> {
             try {
-                List<CtClass> crackClassList = new ArrayList<>();
                 CtClass z10Class = pool.get("com.aspose.html.z10");
 
                 // 授权类型
@@ -33,7 +32,7 @@ public class CrackHtmlMain {
                 // 企业版
                 CtMethod m28 = z10Class.getDeclaredMethod("m28");
                 m28.setBody("return com.aspose.html.z5.m38;");
-
+                List<CtClass> crackClassList = new ArrayList<>();
                 crackClassList.add(z10Class);
                 return crackClassList;
             } catch (Exception ex) {

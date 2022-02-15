@@ -29,8 +29,11 @@ public class CrackJar {
 
     public String crack(Function<ClassPool, List<CtClass>> classPoolListFunction) {
         try {
+            // 破解目标jar路径
             String crackJarFilePath = CRACK_ROOT_PATH + FilenameUtils.getBaseName(officialJarFileName) + "-crack.jar";
+            // 原始jar路径
             String officialJarFilePath = OFFICIAL_ROOT_PATH + officialJarFileName;
+            // 解压jar到临时目录
             File unzipFileFolder = Files.createTempDirectory("tmp_", PosixFilePermissions.asFileAttribute(EnumSet
                     .of(OWNER_READ, OWNER_WRITE, OWNER_EXECUTE))).toFile();
             Zip.unzip(officialJarFilePath, unzipFileFolder.getPath(), true);
