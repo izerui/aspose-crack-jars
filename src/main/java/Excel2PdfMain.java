@@ -27,10 +27,9 @@ public class Excel2PdfMain {
         try {
             Workbook wb = new Workbook("files/excel/产品档案导入模版.xlsx");
             Worksheet worksheet = wb.getWorksheets().get(0);
+
+            // 复制列
             Cells cells = worksheet.getCells();
-//            cells.checkColumn(13);
-//            cells.get(2, 13);
-//            Column column = worksheet.getCells().checkColumn(13);
             cells.deleteColumn(14);
             cells.deleteColumn(15);
             cells.copyColumns(cells, 13, 1, 13, 3);
@@ -38,6 +37,8 @@ public class Excel2PdfMain {
             cells.get(2, 14).setValue("属性" + UUID.randomUUID().toString());
             cells.get(2, 15).setValue("属性" + UUID.randomUUID().toString());
             wb.save("files/excel/产品档案导入模版111.xlsx");
+
+
 //            wb.save("files/excel/更新.pdf", com.aspose.cells.SaveFormat.PDF);
         } catch (Exception e) {
             e.printStackTrace();
