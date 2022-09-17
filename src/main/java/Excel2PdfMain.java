@@ -33,9 +33,9 @@ public class Excel2PdfMain {
             cells.deleteColumn(14);
             cells.deleteColumn(15);
             cells.copyColumns(cells, 13, 1, 13, 3);
-            cells.get(2, 13).setValue("属性" + UUID.randomUUID().toString());
-            cells.get(2, 14).setValue("属性" + UUID.randomUUID().toString());
-            cells.get(2, 15).setValue("属性" + UUID.randomUUID().toString());
+            cells.get(2, 13).setValue("大小");
+            cells.get(2, 14).setValue("颜色");
+            cells.get(2, 15).setValue("形状");
             wb.save("files/excel/产品档案导入模版111.xlsx");
 
 
